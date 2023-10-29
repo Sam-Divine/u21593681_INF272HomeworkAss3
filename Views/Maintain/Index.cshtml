@@ -1,0 +1,149 @@
+﻿@model IEnumerable<u21593681_INF272HomeworkAss3.Models.borrows>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Maintain Page</h2>
+
+<!--  //////////////  -->
+<!--AUTHORS-->
+<div class="row">
+    <div class="col-6" style="background-color:lightblue">
+        <div class=container-fluid>
+            <h1>Authors</h1>
+            <hr />
+            <p>
+                @Html.ActionLink("Create New", "CreateBook", "Book")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.books.authors.name)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.books.authors.name)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.books.authors.authorId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.books.authors.authorId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.books.authors.authorId })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+
+    <!--TYPES-->
+    <div class="col-6" style="background-color:aquamarine">
+        <div class=container-fluid>
+            <h2>Types</h2>
+            <br />
+            <p>
+                @Html.ActionLink("Create New", "Create", "Students")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.takenDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.broughtDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.books.name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.students.name)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.takenDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.broughtDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.books.name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.students.name)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.borrowId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.borrowId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.borrowId })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+            <div class=container-fluid>
+                <h2>Borrows</h2>
+                <br />
+                <p>
+                    @Html.ActionLink("Create New", "Create", "Students")
+                </p>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.takenDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.broughtDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.books.name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.students.name)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.takenDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.broughtDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.books.name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.students.name)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.borrowId }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.borrowId }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.borrowId })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+    </div>
+</div>

@@ -1,0 +1,150 @@
+﻿@model IEnumerable<u21593681_INF272HomeworkAss3.Models.borrows>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>HOME PAGE</h1>
+
+<!--STUDENTS-->
+<div class="row"style="background-color: red">
+    <div class="col-7" style="background-color:aquamarine">
+        <div class=container-fluid>
+            <h2>Students</h2>
+            <br />
+            <p>
+                @Html.ActionLink("Create New", "CreateStudent", "Home")
+            </p>
+            <br />
+            @using (Html.BeginForm())
+            {
+                <input type="text" value="Search using student name" name="searchStudent" />
+
+                <input type="submit" value="Search" />
+            }
+
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.students.name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.students.surname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.students.birthdate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.students.gender)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.students.@class)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.students.point)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.students.name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.students.surname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.students.birthdate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.students.gender)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.students.@class)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.students.point)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "StudentDetails", new { id = item.students.studentId })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+
+        </div>
+    </div>
+
+
+
+    <div class="col-5" style="background-color:lightblue">
+        <!--BOOKS-->
+        <div class=container-fluid>
+            <h1>Books</h1>
+            <hr />
+            <p>
+                @Html.ActionLink("Create New", "CreateBook", "Home")
+            </p>
+            <br />
+            @using (Html.BeginForm())
+            {
+                <input type="text" value="Search using book name" name="searchBook" />
+                <input type="submit" value="Search" />
+            }
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.books.name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.books.pagecount)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.books.point)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.books.authors.name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.books.types.name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.books.Status)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.books.name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.books.pagecount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.books.point)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.books.authors.name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.books.types.name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.books.Status)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "BookDetails", new { id = item.books.bookId }) |
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

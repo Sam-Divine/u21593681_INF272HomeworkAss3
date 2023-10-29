@@ -1,0 +1,63 @@
+﻿@model IEnumerable<u21593681_INF272HomeworkAss3.Models.borrows>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.students.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.students.surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.students.birthdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.students.gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.students.@class)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.students.point)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.students.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.students.surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.students.birthdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.students.gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.students.@class)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.students.point)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.students.studentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.students.studentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.students.studentId })
+        </td>
+    </tr>
+}
+
+</table>
